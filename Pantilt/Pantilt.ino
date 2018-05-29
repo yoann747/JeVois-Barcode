@@ -120,7 +120,7 @@ switch (state)
     if (state == 4)
   {  
 
-    panval -= (targx * pangain) / 1000;
+    panval += (targx * pangain) / 1000;
     if (panval < 5 * SCALE) panval = 5 * SCALE; else if (panval > 175 * SCALE) panval = 175 * SCALE;
     panservo.write(panval / SCALE);
        
