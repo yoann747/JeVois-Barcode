@@ -200,21 +200,21 @@ else
 { 
   if (transmove>100&& (300 < targw && targw <=800 || 300 < targw && targw <=800 ))
      {     ROBOT_MOVE(228,128,128);
-            //ROBOT_STOP();                      
+                          
             }
   else if (transmove>100 && ((20 < targw && targw <= 300) &&(20 < targh && targh <= 300)   ))
       
     {   ROBOT_MOVE(228,128,50);
-            //ROBOT_WALK_FWD();     
+       
             }
   else if (transmove<80&& (300 < targw && targw <=800 || 300 < targw && targw <=800 ))
   {     ROBOT_MOVE(28,128,128);
-            //ROBOT_STOP();                      
+                             
             }
 
   else if (transmove<80 && ((20 < targw && targw <=300) &&(20 < targh && targh <= 300)   ))
      {     ROBOT_MOVE(28,128,50);
-            //ROBOT_WALK_FWD();                      
+                         
             }
 
   else if ( (80 <= transmove && transmove <= 100)&& ((20 < targw && targw <= 300) &&(20 < targh && targh <= 300) ))
