@@ -138,15 +138,7 @@ int targx = 0, targy = 0;
   digitalWrite(LED_BUILTIN , HIGH);
  mySerial.println(instr);
 char * tok = strtok(instr, " \r\n");
-//instrnew=instr;
-//unsigned long period=50000;
 
-
-// unsigned long check1 = micros();
-  //mySerial.println("check1");
- //mySerial.println(check1);
-//for  (unsigned long start = micros(); (micros()-start) < period;  )
-//{
     while (tok)
     {
 switch (state)
@@ -160,8 +152,7 @@ switch (state)
        case 5: targh = atoi(tok); state = 6; break;
        default: break; // Skip any additional tokens
      }
-   //mySerial.println(tok);
-    //mySerial.println(state);
+
      tok = strtok(0, " \r\n");
     }
 
@@ -178,38 +169,15 @@ switch (state)
     if (tiltval < 5 * SCALE) tiltval = 5 * SCALE; else if (tiltval > 175 * SCALE) tiltval = 175 * SCALE;
     tiltservo.write(tiltval / SCALE);
 
-
-
-    //mySerial.println(targw);
-    //mySerial.println(targh);
-    //area=targw*targh;
-    //mySerial.println(area);
-    //mySerial.println(id);
-    //
     }
    else 
      { ROBOT_STOP(); }
     transmove=panval/SCALE;
     vertmove=tiltval /SCALE;
 
- //unsigned long check2 = micros();
- //mySerial.println("check2");
- //mySerial.println(check2);
 
- 
-//mySerial.println(transmove);
-//mySerial.println(vertmove);
-
- //unsigned long check3 = micros();
- //mySerial.println("check3");
-// mySerial.println(check3);
   buggymove(); 
-//unsigned long check4 = micros();
- //mySerial.println("check4");
- //mySerial.println(check4);
-  
-  //ROBOT_MOVE(158,128,128);
-  //delay (2000);
+
  
   }
   void buggymove( )
@@ -255,72 +223,8 @@ else
        {  ROBOT_STOP();                      
             }
    }
-    //delay (3000);
-    
-    //ROBOT_MOVE(128,0,128);
-    //delay (30000);
 
     }
       
       
- /*
-  if (transmove<80&& (targw > 500 || targh > 500))
-     {     ROBOT_MOVE(158,128,128);
-            //ROBOT_STOP();                      
-            }
-  else { ROBOT_STOP();   }
-
-
-    
-//mySerial.println(targw);
-//mySerial.println(targh);
- if (transmove<80&& (targw > 500 || targh > 500))
-     {     ROBOT_MOVE(158,128,128);
-            //ROBOT_STOP();                      
-            }
-  else { ROBOT_STOP();   }
-
- else if (transmove<80 && ((0 < targw && targw <= 500) &&(0 < targh && targh <= 500)   ))
-     {     ROBOT_MOVE(158,128,0);
-            //ROBOT_WALK_FWD();                      
-            }
-            
- else if (transmove>100 && (targw > 500 || targh > 500))
-        {     ROBOT_MOVE(98,128,128);
-              //ROBOT_STOP();   
-              }
-         
- else if (transmove>100 && ((0 < targw && targw <= 500) &&(0 < targh && targh <= 500)   ))
-      
-    {   ROBOT_MOVE(98,128,0);
-            //ROBOT_WALK_FWD();     
-            }
- else if ( (80 <= transmove && transmove <= 110)&& ((0 < targw && targw <= 500) &&(0 < targh && targh <= 500) ))
-       {    ROBOT_WALK_FWD();    }
-       
- else {  ROBOT_STOP();    }
- */
-    
-    //}   
-   //unsigned long end = micros();
-   //unsigned long delta = end - start;
-   //mySerial.println(delta);
-    //panservo.read();
-    //tiltservo.read();
-    
-    //mySerial.println(panval / SCALE);
-    //mySerial.println(tiltval/ SCALE);
-    
-
-
-    
-
-
-    
-    
-    
-    
-  // put your main code here, to run repeatedly:
-
-
-
+ 
